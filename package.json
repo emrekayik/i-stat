@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "repository": {
+    "url": "https://github.com/emrekayik/i-stat"
+  },
+  "author": {
+    "name": "emrekayik",
+    "email": "emrekayik1905@gmail.com",
+    "url": "https://emrekayik.vercel.app"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
