@@ -1,9 +1,9 @@
 # git-cliff ~ configuration file
 # https://git-cliff.org/docs/configuration
 
-[remote.github]
-owner = "emrekayik"
-repo = "i-stat"
+# [remote.github]
+# owner = "emrekayik"
+# repo = "i-stat"
 
 [changelog]
 # template for the changelog body
@@ -28,7 +28,7 @@ body = """
 {%- if github -%}
 {% if github.contributors | filter(attribute="is_first_time", value=true) | length != 0 %}
   {% raw %}\n{% endraw -%}
-  ## New Contributors
+  ## New Contributors ❤️
 {%- endif %}\
 {% for contributor in github.contributors | filter(attribute="is_first_time", value=true) %}
   * @{{ contributor.username }} made their first contribution
@@ -58,22 +58,3 @@ footer = """
 """
 # postprocessors
 postprocessors = []
-
-[git]
-# parse the commits based on https://www.conventionalcommits.org
-conventional_commits = false
-# filter out the commits that are not conventional
-filter_unconventional = true
-# process each line of a commit as an individual commit
-split_commits = false
-# regex for preprocessing the commit messages
-commit_preprocessors = [
-  # remove issue numbers from commits
-  { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "" },
-]
-# filter out the commits that are not matched by commit parsers
-filter_commits = false
-# sort the tags topologically
-topo_order = false
-# sort the commits inside sections by oldest/newest order
-sort_commits = "newest"
